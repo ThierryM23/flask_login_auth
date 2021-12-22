@@ -1,0 +1,41 @@
+/*
+
+Lo primero es conocer cómo se deben declarar las reglas en css:
+
+Las etiquetas se declaran por nombre, sin signos:
+div {} Asignará el estilo a todos los elementos con esta etiqueta
+p.una-clase {} Aplica a todos los párrafos que tengan la clase <p class="una-clase"></p>
+Para definir reglas por ID se antepone #:
+#boton {} Aplica a un elemento con la ID especificada <button id="button"></button>
+Para definir reglas por clase se antepone .:
+.pad-vertical {} Aplica a todos los elementos que tengan la clase, por ejemplo: <li class="pad-vertical"></li> o <section class="pad-vertical"></section>
+Ahora, lo que te comenté en cuanto a orden de declaración y especificidad, se aclara con algunos ejemplos y comentarios de porque sí o porque no aplican:
+
+/* No aplica porque se declaró antes de .column y no es muy específica
+.paddingv1{
+    background:#8c8;
+    padding:30px 10px;
+}
+*/
+ /*Aplica porque es más específica, incluyendo las dos clases deseadas
+.column.paddingv2{
+    background:#8c8;
+    padding:30px 10px;
+}
+
+.column {
+    display:block;
+    background:#ccc;
+    margin:10px;
+    padding:10px;
+}
+
+/* Aplica porque se declaró después de .column */
+/*
+.paddingv3{
+    background:#88c;
+    padding:30px 10px;
+}
+
+*/
+
